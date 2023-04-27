@@ -42,7 +42,7 @@ sudo chown -R $USER_DIR_SHARED_NFS_SERVER:$USER_DIR_SHARED_NFS_SERVER $DIR_SHARE
 sudo chmod -R ug+rwx $DIR_SHARED_NFS_SERVER
 
 cp /etc/exports $DIR_INST/exports.backup
-export nfsline="$DIR_INST       *(rw,sync,no_wdelay,root_squash,insecure,no_subtree_check,fsid=0)"
+export nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_wdelay,root_squash,insecure,no_subtree_check,fsid=0)"
 echo $nfsline
 
 cat $DIR_INST/exports.backup | sed -z 's/\n\n/\n/g' > /etc/exports 
