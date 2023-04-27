@@ -32,17 +32,11 @@ mkdir -p /tmp/nfs/$PROJECT/ocpPvPvcNfs
 chmod a+x /tmp/nfs/$PROJECT/ocpPvPvcNfs
 export DIR_INST=/tmp/nfs/$PROJECT/ocpPvPvcNfs
 
-echo "ZZZAqui 1"
-cat ~/more-resources/nfs/ocpPvNfs.yaml | sed "s/{###PROVIDE_YOUR_PROJECT_NAMESPACE_CP4X_HERE###}/${PROJECT}/g" | sed "s/{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}/${DIR_SHARED_NFS_SERVER}/g" | sed "s/{###PROVIDE_YOUR_IP_NFS_SERVER_HERE###}/${IP_NFS_SERVER}/g" >/tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml
-echo "ZZZAqui 2"
+cat ~/more-resources/nfs/ocpPvNfs.yaml | sed "s/{###PROVIDE_YOUR_PROJECT_NAMESPACE_CP4X_HERE###}/${PROJECT}/g" | sed "s|{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}|${DIR_SHARED_NFS_SERVER}|g" | sed "s/{###PROVIDE_YOUR_IP_NFS_SERVER_HERE###}/${IP_NFS_SERVER}/g" >/tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml
 oc apply -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml
-echo "ZZZAqui 3"
 
-echo "ZZZAqui 4"
 cat ~/more-resources/nfs/ocpPvcNfs.yaml | sed "s/{###PROVIDE_YOUR_PROJECT_NAMESPACE_CP4X_HERE###}/${PROJECT}/g" >/tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvcNfs_OK.yaml
-echo "ZZZAqui 5"
 oc apply -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvcNfs_OK.yaml
-echo "ZZZAqui 6"
 
 echo "Para deletar: "
 echo "oc delete -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml"
