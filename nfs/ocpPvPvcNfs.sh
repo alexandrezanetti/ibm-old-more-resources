@@ -21,12 +21,12 @@ if [ ${BASTION_NFS_SERVER} = TRUE ]; then
    echo $IPA10IP ;
    echo $IPA9IPCIDR ;
    echo $IPA9IP ;
-   export $IP_NFS_SERVER=$IPA9IP ;
+   export IP_NFS_SERVER=$IPA9IP ;
 fi
-echo $IP_NFS_SERVER=$IPA9IP
+echo $IP_NFS_SERVER
 
 if [ ${IP_NFS_SERVER} = "{###PROVIDE_YOUR_IP_NFS_SERVER_HERE###}" ]; then echo "Please provide your NFS Server IP "; exit 999; fi
-echo $IP_NFS_SERVER=$IPA9IP
+echo $IP_NFS_SERVER
 
 mkdir -p /tmp/nfs/$PROJECT/ocpPvPvcNfs
 chmod a+x /tmp/nfs/$PROJECT/ocpPvPvcNfs
