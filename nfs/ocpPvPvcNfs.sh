@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo $PROJECT
-echo $STORAGECLASSBLOCK
-echo $APICLICENCE
+echo $DIR_SHARED_NFS_SERVER
+echo $IP_NFS_SERVER
 
 mkdir -p /tmp/nfs/$PROJECT/ocpPvPvcNfs
 chmod a+x /tmp/nfs/$PROJECT/ocpPvPvcNfs
