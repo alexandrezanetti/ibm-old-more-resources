@@ -1,6 +1,4 @@
 #!/bin/bash
-dnf install -y git ; git clone https://github.com/alexandrezanetti/more-resources.git
-echo "##### NFS Server - RHEL ####"; export DIR_SHARED_NFS_SERVER=/data/nfs/QMMULTI_var_mqm ; export USER_DIR_SHARED_NFS_SERVER=mqm ; chmod a+x ~/more-resources/nfs/nfsServer.sh ; ~/more-resources/nfs/./nfsServer.sh
 echo $DIR_SHARED_NFS_SERVER
 echo $USER_DIR_SHARED_NFS_SERVER
 
