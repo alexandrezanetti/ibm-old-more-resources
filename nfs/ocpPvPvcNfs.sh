@@ -9,10 +9,6 @@ if [ ${PROJECT} = "{###PROVIDE_YOUR_PROJECT_NAMESPACE_CP4X_HERE###}" ]; then ech
 if [ ${DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your Directory to share on NFS "; exit 999; fi
 if [ ${BASTION_NFS_SERVER} = "{###TRUE/FALSE###}" ]; then echo "Please provide your NFS Server will install on Bastion? TRUE/FALSE"; exit 999; fi
 
-if [ ${IP_NFS_SERVER} = "{###PROVIDE_YOUR_IP_NFS_SERVER_HERE###}" ]; then echo "Please provide your NFS Server IP"; exit 999; fi
-
-echo $IP_NFS_SERVER=$IPA9IP
-
 if [ ${BASTION_NFS_SERVER} = TRUE ]; then 
    echo "Discovering IPs" ;
    ip a | grep " 10." | grep inet > $DIR_INST/ipa10.txt ;
