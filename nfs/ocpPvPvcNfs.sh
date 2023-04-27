@@ -44,7 +44,7 @@ echo "oc delete -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvcNfs_OK.yaml"
 echo "Ou execute o script: /tmp/nfs/$PROJECT/ocpPvPvcNfs/./nfs_uninstall.sh"
 
 cat <<EOF > /tmp/nfs/$PROJECT/ocpPvPvcNfs/./nfs_uninstall.sh
-oc delete -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml
 oc delete -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvcNfs_OK.yaml
+oc delete -f /tmp/nfs/$PROJECT/ocpPvPvcNfs/ocpPvNfs_OK.yaml
 EOF
 chmod 777 /tmp/nfs/$PROJECT/ocpPvPvcNfs/./nfs_uninstall.sh
