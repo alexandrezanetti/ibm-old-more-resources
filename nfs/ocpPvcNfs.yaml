@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-pvc
+  name: ocp-pvc-nfs
   namespace: {###PROVIDE_YOUR_OPERATOR_PRODUCT_CP4X_HERE###}
 spec:
   accessModes:
@@ -9,5 +9,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  volumeName: nfs-pv
+  volumeName: ocp-pv-nfs
   storageClassName: ""
