@@ -70,4 +70,7 @@ systemctl restart firewalld
 
 exportfs -arv
 exportfs -s
+
+echo "NFS montado no arquivo: cat /etc/exports"
 showmount -e $IPA9IP
+
