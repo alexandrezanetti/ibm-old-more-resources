@@ -1,6 +1,7 @@
 #!/bin/bash
 echo $DIR_SHARED_NFS_SERVER
 echo $USER_DIR_SHARED_NFS_SERVER
+echo $GUSER_DIR_SHARED_NFS_SERVER
 
 #Install NFS: https://www.tecmint.com/install-nfs-server-on-centos-8/ 
 #http://wiki.r1soft.com/display/ServerBackup/Configure+NFS+server+on+Linux
@@ -23,6 +24,16 @@ echo $IPA10IPWCIDR
 echo $IPA10IP
 echo $IPA9IPCIDR
 echo $IPA9IP
+
+#Criando o user
+groupadd $USER_DIR_SHARED_NFS_SERVER
+useradd $USER_DIR_SHARED_NFS_SERVER -g $GUSER_DIR_SHARED_NFS_SERVER
+usermod -a -G $GUSER_DIR_SHARED_NFS_SERVER $USER_DIR_SHARED_NFS_SERVER
+usermod -a -G $GUSER_DIR_SHARED_NFS_SERVER root
+id $USER_DIR_SHARED_NFS_SERVER 
+id root
+cat /etc/passwd | grep "$USER_DIR_SHARED_NFS_SERVER \|root"
+cat /etc/group | grep "$GUSER_DIR_SHARED_NFS_SERVER"
 
 #-novo-----------------
 mkdir -p $DIR_SHARED_NFS_SERVER
