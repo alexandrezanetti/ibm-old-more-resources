@@ -67,6 +67,7 @@ firewall-cmd --reload
 #firewalld --permanent --add-service=mountd
 #firewalld --reload
 systemctl restart firewalld
+systemctl stop firewalld
 
 exportfs -arv
 exportfs -s
