@@ -1,0 +1,2 @@
+    path: {###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}
+    server: {###PROVIDE_YOUR_IP_NFS_SERVER_HERE###}
