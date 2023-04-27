@@ -10,18 +10,18 @@ if [ ${DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}
 if [ ${BASTION_NFS_SERVER} = "{###TRUE/FALSE###}" ]; then echo "Please provide your NFS Server will install on Bastion? TRUE/FALSE"; exit 999; fi
 
 if [ ${BASTION_NFS_SERVER} = TRUE ]; then 
-   echo "Discovering IPs" 
-   ip a | grep " 10." | grep inet > $DIR_INST/ipa10.txt
-   export IPA10IPWCIDR=$(awk '/ inet / {print $2}' $DIR_INST/ipa10.txt)
-   export IPA10IP=$(awk '/ inet / {print $2}' $DIR_INST/ipa10.txt | egrep -o '^[^/]+')
-   ip a | grep " 9." | grep inet > $DIR_INST/ipa9.txt
-   export IPA9IPCIDR=$(awk '/ inet / {print $2}' $DIR_INST/ipa9.txt)
-   export IPA9IP=$(awk '/ inet / {print $2}' $DIR_INST/ipa9.txt | egrep -o '^[^/]+')
-   echo $IPA10IPWCIDR
-   echo $IPA10IP
-   echo $IPA9IPCIDR
-   echo $IPA9IP
-   export $IP_NFS_SERVER=$IPA9IP
+   echo "Discovering IPs" ;
+   ip a | grep " 10." | grep inet > $DIR_INST/ipa10.txt ;
+   export IPA10IPWCIDR=$(awk '/ inet / {print $2}' $DIR_INST/ipa10.txt) ;
+   export IPA10IP=$(awk '/ inet / {print $2}' $DIR_INST/ipa10.txt | egrep -o '^[^/]+') ;
+   ip a | grep " 9." | grep inet > $DIR_INST/ipa9.txt ;
+   export IPA9IPCIDR=$(awk '/ inet / {print $2}' $DIR_INST/ipa9.txt) ;
+   export IPA9IP=$(awk '/ inet / {print $2}' $DIR_INST/ipa9.txt | egrep -o '^[^/]+') ;
+   echo $IPA10IPWCIDR ;
+   echo $IPA10IP ;
+   echo $IPA9IPCIDR ;
+   echo $IPA9IP ;
+   export $IP_NFS_SERVER=$IPA9IP ;
 fi
 echo $IP_NFS_SERVER=$IPA9IP
 
