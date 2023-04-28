@@ -6,6 +6,11 @@ echo $GUSER_DIR_SHARED_NFS_SERVER
 #Install NFS: https://www.tecmint.com/install-nfs-server-on-centos-8/ 
 #http://wiki.r1soft.com/display/ServerBackup/Configure+NFS+server+on+Linux
 
+if [ ${DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your Directory to share on NFS "; exit 999; fi
+if [ ${USER_DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_USER_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your User to be owner of shared NFS "; exit 999; fi
+if [ ${GUSER_DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_GUSER_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your User to be owner of shared NFS "; exit 999; fi
+
+
 #-ja esta no script-----------------
 sudo dnf install -y nfs-utils nfs4-acl-tools 
 
@@ -39,7 +44,7 @@ cat /etc/group | grep "$GUSER_DIR_SHARED_NFS_SERVER"
 mkdir -p $DIR_SHARED_NFS_SERVER
 chmod 777 $DIR_SHARED_NFS_SERVER
 sudo chown -R $USER_DIR_SHARED_NFS_SERVER:$USER_DIR_SHARED_NFS_SERVER $DIR_SHARED_NFS_SERVER
-sudo chmod -R ug+rwx $DIR_SHARED_NFS_SERVER
+sudo chmod -R ug+rwx $DIR_SHARED_NFS_SERVERd
 
 cp /etc/exports $DIR_INST/exports.backup
 export nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_wdelay,root_squash,insecure,no_subtree_check,fsid=0)"
