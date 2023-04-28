@@ -8,7 +8,7 @@ echo $GUSER_DIR_SHARED_NFS_SERVER
 
 if [ ${DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your Directory to share on NFS "; exit 999; fi
 if [ ${USER_DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_USER_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your User to be owner of shared NFS "; exit 999; fi
-if [ ${GUSER_DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_GUSER_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your User to be owner of shared NFS "; exit 999; fi
+if [ ${GUSER_DIR_SHARED_NFS_SERVER} = "{###PROVIDE_YOUR_GUSER_DIR_SHARED_NFS_SERVER_HERE###}" ]; then echo "Please provide your Group User of shared NFS "; exit 999; fi
 
 
 #-ja esta no script-----------------
