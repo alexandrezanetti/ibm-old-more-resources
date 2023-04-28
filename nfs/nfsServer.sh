@@ -80,7 +80,8 @@ exportfs -s
 echo "##############################################"
 echo "##############################################"
 echo "NFS montado no arquivo: cat /etc/exports"
-echo "Use este comando na máquina que será NFS cliente: showmount -e $IPA9IP"
+echo "Use este comando na máquina que será NFS cliente:"
+echo "   sudo dnf install -y nfs-utils nfs4-acl-tools ; showmount -e $IPA9IP"  
 showmount -e $IPA9IP
 echo "##############################################"
 echo "##############################################"
