@@ -77,7 +77,10 @@ systemctl stop firewalld
 exportfs -arv
 exportfs -s
 
+echo "##############################################"
+echo "##############################################"
 echo "NFS montado no arquivo: cat /etc/exports"
 echo "Use este comando na máquina que será NFS cliente: showmount -e $IPA9IP"
 showmount -e $IPA9IP
-
+echo "##############################################"
+echo "##############################################"
