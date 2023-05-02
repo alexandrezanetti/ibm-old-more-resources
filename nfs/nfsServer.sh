@@ -48,8 +48,9 @@ sudo chmod -R ug+rwx $DIR_SHARED_NFS_SERVERd
 
 cp /etc/exports $DIR_INST/exports.backup
 # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/s1-nfs-server-config-exports
-export nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_wdelay,root_squash,insecure,no_subtree_check,fsid=0)"
-#                                             (rw,sync,no_root_squash,insecure,no_subtree_check)
+#VZZZ1 export nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_wdelay,root_squash,insecure,no_subtree_check,fsid=0)"
+#VAndreexport nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_root_squash,insecure,no_subtree_check)
+export nfsline="$DIR_SHARED_NFS_SERVER       *(rw,sync,no_wdelay,no_root_squash,insecure,no_subtree_check,fsid=0)"
 echo $nfsline
 
 cat $DIR_INST/exports.backup | sed -z 's/\n\n/\n/g' > /etc/exports 
